@@ -8,7 +8,6 @@
     // working like they did before the TypeScript migration.
     // TODO: Drop it in the next breaking release.
     "esModuleInterop": true,
-    "outDir": "./dist",
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     // Allow JS must be included to ensure that the built binary is included
@@ -18,7 +17,9 @@
     // In order to gracefully move our project to TypeScript without having
     // TS immediately yell at you, we'll disable strict mode for now.
     "strict": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "emitDeclarationOnly": true,
+    "declarationDir": "types",
   },
   "include": [
     "**/*.js",
@@ -27,7 +28,9 @@
   ],
   "exclude": [
     "coverage",
-    "dist"
+    "dist",
+    "types",
+    "node_modules",
   ],
   "ts-node": {
     "transpileOnly": true
